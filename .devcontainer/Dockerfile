@@ -53,15 +53,24 @@ ENV PATH=$PATH:${FLUTTER_SDK_ROOT}/bin
 RUN dpkg --add-architecture amd64 \
     && apt-get update \
     && apt-get -y install --no-install-recommends \
+    # Basic tools
+    ca-certificates \
     curl \
     git \
     unzip \
     xz-utils \
     zip \
+    sudo \
     openjdk-17-jdk \
     libglu1-mesa \
     libc6:amd64 \
-    sudo \
+    clang \
+    cmake \
+    ninja-build \
+    pkg-config \
+    libgtk-3-dev \
+    liblzma-dev \
+    build-essential \
     && apt-get autoremove -y \
     && apt-get clean -y \
     && rm -rf /var/lib/apt/lists/*
